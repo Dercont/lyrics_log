@@ -2356,7 +2356,7 @@ table.table .th-sm {
     stroke-dasharray: 475;
     stroke-dashoffset: -474;
     stroke-width: 3px;
-    stroke: #2D7D9A; }
+    stroke: #000000; }
   .welcome .svg-wrapper:hover .shape {
     -webkit-animation: 6s drawing linear forwards;
     animation: 6s drawing linear forwards; }
