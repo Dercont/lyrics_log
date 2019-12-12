@@ -13,9 +13,9 @@ session_start();
 
 <body>
     <?php
-    print_r($_SESSION["usuario_id"]);
+    //print_r($_SESSION["usuario_id"]);
     echo ("<br>");
-    print_r($_SESSION["usuario_valido"]);
+    //print_r($_SESSION["usuario_valido"]);
     if (isset($_SESSION["usuario_valido"])) {
         ?>
         <script type="text/javascript">

@@ -32,15 +32,15 @@ if (isset($_REQUEST['usuario']) && isset($_REQUEST['clave'])) {
         $obj_usuarios2 = new usuario();
         $info_usuario = $obj_usuarios2->consultar_usuario($usuario);
         echo ("</br>");
-       // print_r($info_usuario);
+        // print_r($info_usuario);
 
         foreach ($info_usuario as $datos_usuario) {
             $id = $datos_usuario["id"];
         }
-       // print_r($id);
-       
+        // print_r($id);
+
         $_SESSION["usuario_id"] = $id;
-       // print_r($_SESSION["usuario_id"]);
+        // print_r($_SESSION["usuario_id"]);
 
         $usuario_validado = $usuario;
         $_SESSION["usuario_valido"] = $usuario_validado;
@@ -51,8 +51,35 @@ if (isset($_REQUEST['usuario']) && isset($_REQUEST['clave'])) {
 <html lang="es">
 
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Iniciar Sesión</title>
-    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <!-- Fluent Design Bootstrap -->
+    <link rel="stylesheet" href="./css/fluent.css">
+    <!-- Micon icons-->
+    <link rel="stylesheet" href="./css/micon.min.css">
+    <!--Custom style -->
+    <style>
+        /* Delete it if you don't want to have black/white colors and forced font-weight */
+
+        body {
+            background-color: #fff;
+            color: #4A5459;
+        }
+
+        .font-weight-bold {
+            font-weight: 600 !important;
+        }
+
+        h5,
+        p {
+            font-weight: 400;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -61,7 +88,7 @@ if (isset($_REQUEST['usuario']) && isset($_REQUEST['clave'])) {
         <?php
         // Sesión Iniciada
         if (isset($_SESSION["usuario_valido"])) {
-            header('Location: home.php');
+            header('Location: welcome.php');
         }
         // Intento de Entrada Fallido
         else if (isset($usuario)) {
@@ -71,20 +98,34 @@ if (isset($_REQUEST['usuario']) && isset($_REQUEST['clave'])) {
         }
         //Sesión no iniciada
         else {
-            print("<br><br>\n");
-            print("<p>LyricsLog<br>" .
-                " Por favor identificarse</p>\n");
-            print("<FORM class='entrada' name='login' action='login.php' method='POST'> \n");
+            ?>
+            <style>
+                body {
+                    background-image: url('./img/backgrounds/login.jpg');
+                }
+            </style>
+            <br>
+            <!-- Start your project here-->
+            <h1><span class="text-info font-weight-bold flex-center">Lyrics Log</h1>
 
-            print("<p><label class='etiqueta-entrada'>Usuario:</label>\n");
-            print("     <input type='text' name='usuario' size='15'></p>\n");
-            print("<p><label class='etiqueta-entrada'>Clave</label>\n");
-            print("     <input type='password' name='clave' size='15'></p>\n");
-            print("     <input type='submit' value='entrar'></p>\n");
-            print("</FORM>\n");
+            <br>
+            <div class="flex-center login">
+                <form class="text-center border border-gray p-5" action="#!">
+                    <p class="sh3bold">Iniciar sesión</p>
 
-            print("<p>Nota: Si no dispone de indentificación o tiene problemas " .
-                "para entrar<br>pongase en contacto con él " . "<a href='mailto: webmaster@localhost'>Administrador</a> del sitio</p>\n");
+                    <!-- user -->
+                    <input type="text" name='usuario' id="defaultLoginFormEmail" class="form-control mb-4" placeholder="usuario">
+
+                    <!-- Password -->
+                    <input type="password" name='clave' id="defaultLoginFormPassword" class="form-control mb-4" placeholder="contraseña">
+
+                    <div class="d-flex align-items-center">
+                        <button class="btn btn-info btn-block my-4" type="submit">Entrar</button>
+                    </div>
+                    <!-- Sign in button -->
+                </form>
+            </div>
+        <?php
         }
         ?>
     </body>
