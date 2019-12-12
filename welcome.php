@@ -37,9 +37,6 @@ session_start();
 </head>
 
 <body>
-
-    <!-- Start your project here-->
-
     <div class="flex-center welcome">
 
         <svg class="svg-wrapper" height="300" width="650" xmlns="http://www.w3.org/2000/svg">
@@ -62,9 +59,8 @@ session_start();
         </div>
 
     </div>
-    <!-- /Start your project here-->
-<?php
-/*
+    <?php
+    /*
     <!-- Scripts -->
     <!-- JQuery -->
     <script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
@@ -73,7 +69,7 @@ session_start();
     <!-- Bootstrap core JavaScript -->
     <script type="text/javascript" src="./js/bootstrap.min.js"></script>
 */
- ?>   
+    ?>
 </body>
 
 </html>

@@ -99,31 +99,38 @@ if (isset($_REQUEST['usuario']) && isset($_REQUEST['clave'])) {
         //Sesión no iniciada
         else {
             ?>
-            <style>
-                body {
-                    background-image: url('./img/backgrounds/login.jpg');
-                }
-            </style>
-            <br>
             <!-- Start your project here-->
-            <h1><span class="text-info font-weight-bold flex-center">Lyrics Log</h1>
+            <div class="container my-5 py-3">
+                <!--Section: Content-->
+                <section class="px-md-5 mx-md-5 text-center dark-grey-text">
 
-            <br>
-            <div class="flex-center login">
-                <form class="text-center border border-gray p-5" action="#!">
-                    <p class="sh3bold">Iniciar sesión</p>
+                    <!--Grid row-->
+                    <div class="row">
 
-                    <!-- user -->
-                    <input type="text" name='usuario' id="defaultLoginFormEmail" class="form-control mb-4" placeholder="usuario">
+                        <!--Grid column-->
+                        <div class="col-md-6 mb-4 mb-md-0 flex-center login">
+                            <h1><span class="text-info font-weight-bold">Lyrics Log</h1>
 
-                    <!-- Password -->
-                    <input type="password" name='clave' id="defaultLoginFormPassword" class="form-control mb-4" placeholder="contraseña">
+                            <form class="text-center border border-gray p-5" action="login.php" method='POST'>
+                                <p class="sh3">Iniciar sesión</p>
+                                <!-- user -->
+                                <input type="text" name='usuario' id="defaultLoginFormEmail" class="form-control mb-4" placeholder="usuario">
+                                <!-- Password -->
+                                <input type="password" name='clave' id="defaultLoginFormPassword" class="form-control mb-4" placeholder="contraseña">
+                                <button class="btn btn-info btn-default my-4 btn-md ml-0" type="submit">Entrar</button>
 
-                    <div class="d-flex align-items-center">
-                        <button class="btn btn-info btn-block my-4" type="submit">Entrar</button>
+                            </form>
+                        </div>
+                        <!--Grid column-->
+                        <!--Grid column-->
+                        <div class="col-md-5 mb-4 mb-md-0">
+                            <img src="./img/backgrounds/windfeathers.jpg" class="img-fluid" alt="">
+                        </div>
+                        <!--Grid column-->
                     </div>
-                    <!-- Sign in button -->
-                </form>
+                    <!--Grid row-->
+                </section>
+                <!--Section: Content-->
             </div>
         <?php
         }
