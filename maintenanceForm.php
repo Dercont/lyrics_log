@@ -4,13 +4,80 @@ session_start();
 
 <HTML LANG="es">
 
-<HEAD>
-    <TITLE>Ver</TITLE>
-    <LINK rel="stylesheet" type="text/css" href="css/estilo.css">
-</HEAD>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Crear</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <!-- Fluent Design Bootstrap -->
+    <link rel="stylesheet" href="./css/fluent.css">
+    <!-- Micon icons-->
+    <link rel="stylesheet" href="./css/micon.min.css">
+    <!--Custom style -->
+    <style>
+        /* Delete it if you don't want to have black/white colors and forced font-weight */
+
+        body {
+            background-color: #fff;
+            color: #4A5459;
+        }
+
+        .font-weight-bold {
+            font-weight: 600 !important;
+        }
+
+        h5,
+        p {
+            font-weight: 400;
+        }
+    </style>
+
+
+</head>
+
 
 <BODY>
-    <H1>Obra Lírica</H1>
+    <header>
+        <!--Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2D7D9A;">
+
+            <div class=" container">
+
+                <!-- Collapse button -->
+                <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Collapsible content -->
+                <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+
+                    <!-- Links -->
+                    <ul class="navbar-nav">
+
+                        <li class="nav-item">
+                            <a class="nav-link font-weight-bold" href="home.php">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link font-weight-bold" href="discover.php">Descubre</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link font-weight-bold" href="logout.php">Salir</a>
+                        </li>
+
+                    </ul>
+                    <!-- Links -->
+
+                </div>
+                <!-- CTA -->
+
+            </div>
+
+        </nav>
+        <!--/.Navbar -->
+    </header>
     <?php
 
     //Recuperar Datos
@@ -18,7 +85,7 @@ session_start();
 
         require_once("class/obras.php");
 
-        if(isset($_REQUEST['actualizar'])){
+        if (isset($_REQUEST['actualizar'])) {
             //print_r($_REQUEST);
             $id = $_SESSION['usuario_id'];
             $id_obra = $_REQUEST['id_obra'];
@@ -30,21 +97,20 @@ session_start();
             //print($id);
             //print($id_obra);
             $obj_actualizar = new obra();
-            $obj_actualizar->actualizar_obras($id_obra,$id,$titulo,$cuerpo,$categoria,$fecha);
+            $obj_actualizar->actualizar_obras($id_obra, $id, $titulo, $cuerpo, $categoria, $fecha);
 
             $obj_obra = new obra();
             $obra_seleccionada = $obj_obra->seleccionar_obra($id_obra);
             //print("<br><br>");
-           // print_r($obra_seleccionada);
+            // print_r($obra_seleccionada);
         }
 
-        if(isset($_REQUEST['eliminar'])){
+        if (isset($_REQUEST['eliminar'])) {
             print_r($_REQUEST);
             $id_obra = $_REQUEST['id_obra'];
             $obj_eliminar = new obra();
             $obj_eliminar->eliminar_obras($id_obra);
             header('Location: maintenance.php');
-
         }
 
         $id_obra = $_REQUEST['id_obra'];
@@ -86,32 +152,65 @@ session_start();
         //print_r($_REQUEST);
 
         ?>
-            <p>[<a href='home.php'>Menú Principal</a>]</p>
-        <?php
-            //echo ($_GET)['id_obra'];
-            print("<br><br>\n");
-            print("<p>LyricsLog<br>\n");
-            print("<h3>A continuación, llene los siguientes campos:</h3><br>\n");
-            print("<FORM class='entrada' name='obraForm' action='maintenanceForm.php' method='POST'> \n");
+            <!-- Begin page content -->
+            <main role="main" class="container">
+                <div class="container my-5">
 
-            print("<input type='hidden' name='id_obra' value='$id_obra'>");
-            print("<p><label class='etiqueta-entrada'>Título:</label>\n");
-            print("     <input type='text' name='titulo' value='$titulo'  size='15'></p>\n");
-            print("<p><label class='etiqueta-entrada'>Cuerpo</label>\n");
-            print("     <textarea name='cuerpo' rows='10' cols='30'>$cuerpo</textarea>");
-            print("<p><label class='etiqueta-entrada'>Categoría</label>\n");
-            print("<SELECT name='categoria' >
-                    <OPTION value='' $null>" .
-                "<OPTION value='Prosa Poetica' $prosa>Prosa Poetíca
-                    <OPTION value='Haiku' $haiku>Haiku
-                    <OPTION value='Himno' $himno>Himno
-                    <OPTION value='Epigrama' $epigrama>Epigrama
-                </SELECT>");
-            print("<p><label class='etiqueta-entrada'>Fecha</label>\n");
-            print("<input type='date' name='fecha' value='$fecha'>");
-            print("     <input type='submit' name='actualizar' value='Actualizar'>\n");
-            print("     <input type='submit' name='eliminar' value='Eliminar'></p>\n");
-            print("</FORM>\n");
+                    <!--Section: Content-->
+                    <section class="">
+
+                        <!-- Section heading -->
+                        <h3 class="text-center font-weight-bold mb-5">Actualizar Obra Literaria</h3>
+                        <div class="row">
+                            <!--Grid column-->
+                            <div class="col align-self-start">
+                                <form class="border border-light p-5" name='obraForm' action='maintenanceForm.php' method='POST'>
+
+                                    <p class="h4 mb-4 text-center">Llene los siguientes campos:</p>
+                                    <?php
+                                    
+                                    print("<input type='hidden' name='id_obra' value='$id_obra'>");
+
+                                 print("<input type='text' name='titulo' id='defaultContactFormName' class='form-control mb-4' value='$titulo'
+                                         placeholder='Título'></p>\n");
+                                
+                                         print("<SELECT name='categoria' id='defaultSelect' class='browser-default custom-select mb-4'>
+                                         <OPTION value='' $null>" .
+                                             "
+                                         <OPTION value='Prosa Poetica' $prosa>Prosa Poetíca
+                                         <OPTION value='Haiku' $haiku>Haiku
+                                         <OPTION value='Himno' $himno>Himno
+                                         <OPTION value='Epigrama' $epigrama>Epigrama
+                                     </SELECT>");
+                                    
+                                     print("<input type='date' name='fecha' value='$fecha'>");
+                                    ?>
+                            </div>
+                            <!--Grid column-->
+
+                            <!--Grid column-->
+                            <div class="col align-self-center text-center">
+                            <?php
+                            print(" <textarea name='cuerpo' class='form-control rounded-0' id='exampleFormControlTextarea2' rows='13' cols='30'
+                            placeholder='Cuerpo' style='text-align: center;'>$cuerpo</textarea>");
+                            ?>    
+                            <button class="btn btn-info btn-default my-4 btn-md ml-0" name='actualizar' type="submit">Actualizar</button>
+                                <button class="btn btn-danger btn-default my-4 btn-md ml-0" name='eliminar' type="submit">Eliminar</button>
+                                <!--/.Card-->
+
+                            </div>
+                            <!--Grid column-->
+
+                            </form>
+                        </div>
+
+
+                    </section>
+                    <!--Section: Content-->
+
+                </div>
+            </main>
+        <?php
         } else {
             print("<BR><BR>\n");
             print("<P Align='center'>Acceso no autorizado</p>\n");
