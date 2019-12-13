@@ -1,2 +1,4 @@
 # DSVII - Proyecto-Final
-Gestor Web de Obras Literarias, entre las cuales maneja están Haiku, Epigrama, Prosa Poética e Himno. 
+Gestor Web de Obras Literarias
+Por el momento maneja las siguientes:
+Haiku, Epigrama, Prosa Poética e Himno. 
