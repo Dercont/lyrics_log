@@ -34,6 +34,7 @@ session_start();
             font-weight: 400;
         }
     </style>
+    <link rel="shortcut icon" type="image/png" href="./img/backgrounds/favicon.png" >
 </head>
 
 <body>

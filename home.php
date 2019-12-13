@@ -31,7 +31,7 @@ session_start();
             font-weight: 400;
         }
     </style>
-
+    <link rel="shortcut icon" type="image/png" href="./img/backgrounds/favicon.png" >
 
 </head>
 
@@ -53,10 +53,11 @@ session_start();
                     <!-- Links -->
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link font-weight-bold" href="discover.php">Descubre</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link font-weight-bold" href="maintenance.php">Bitácora</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link font-weight-bold" href="discover.php">Descubre</a>
                         </li>
 
                         <li class="nav-item">

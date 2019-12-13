@@ -33,7 +33,7 @@ session_start();
             font-weight: 400;
         }
     </style>
-
+    <link rel="shortcut icon" type="image/png" href="./img/backgrounds/favicon.png" >
 </head>
 
 <body>
@@ -50,9 +50,11 @@ session_start();
                 <div class="flex-center flex-column ">
                     <h1 class="mb-4 text-right">
                         <h1><span class="text-info font-weight-bold">Lyrics Log</h1>
+                        <h5 class="sh3bold">Gestor de Obras Literarias</h5>
+                        <br>
                         <p class="sh3bold">¡Bienvenido!</p>
                         <p class="p2b">$user</p>
-                        <h5 class="sh3bold">Gestor de Obras Literarias</h5>
+                        
 
                         <a href="home.php">
                             <button class="btn btn-welcome">Iniciar</button>

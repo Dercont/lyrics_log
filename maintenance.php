@@ -38,6 +38,7 @@ session_start();
     <link rel="stylesheet" type="text/css" href="libreria/jquery.dataTables.min.css">
     <Script type="text/javascript" language="javascript" src="libreria/jquery-3.1.1.js"></script>
     <Script type="text/javascript" language="javascript" src="libreria/jquery.dataTables.min.js"></script>
+    <link rel="shortcut icon" type="image/png" href="./img/backgrounds/favicon.png" >
 </head>
 
 <body>

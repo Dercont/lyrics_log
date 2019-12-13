@@ -6,7 +6,7 @@ session_start();
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Descubre</title>
+    <title>Prosa Poetíca</title>
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <!-- Fluent Design Bootstrap -->
@@ -58,6 +58,10 @@ session_start();
                         </li>
                         <li class="nav-item">
                             <a class="nav-link font-weight-bold" href="maintenance.php">Bitácora</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link font-weight-bold" href="discover.php">Descubre</a>
                         </li>
                 
                         <li class="nav-item">
