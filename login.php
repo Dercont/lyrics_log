@@ -144,7 +144,7 @@ if (isset($_REQUEST['usuario']) && isset($_REQUEST['clave'])) {
                         <!--Grid column-->
                         <!--Grid column-->
                         <div class="col-md-5 mb-4 mb-md-0">
-                            <img src="./img/backgrounds/windfeathers.jpg" class="img-fluid" alt="">
+                            <img src="./img/backgrounds/windfeathers.svg" class="img-fluid" alt="">
                         </div>
                         <!--Grid column-->
                     </div>

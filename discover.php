@@ -2,8 +2,6 @@
 session_start();
 ?>
 
-<HTML LANG="es">
-
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -37,8 +35,7 @@ session_start();
 
 </head>
 
-
-<BODY>
+<body>
     <header>
         <!--Navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2D7D9A;">
@@ -55,16 +52,14 @@ session_start();
 
                     <!-- Links -->
                     <ul class="navbar-nav">
-
-                        <li class="nav-item">
-                            <a class="nav-link font-weight-bold" href="home.php">Home</a>
+                      
+                    <li class="nav-item">
+                            <a class="nav-link font-weight-bold" href="home.php">Inicio</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link font-weight-bold" href="maintenance.php">Bitácora</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link font-weight-bold" href="discover.php">Descubre</a>
-                        </li>
+                
                         <li class="nav-item">
                             <a class="nav-link font-weight-bold" href="logout.php">Salir</a>
                         </li>
@@ -80,175 +75,203 @@ session_start();
         </nav>
         <!--/.Navbar -->
     </header>
+
     <?php
-
-    //Recuperar Datos
     if (isset($_SESSION["usuario_valido"])) {
-
-        require_once("class/obras.php");
-
-        if (isset($_REQUEST['actualizar'])) {
-            //print_r($_REQUEST);
-            $id = $_SESSION['usuario_id'];
-            $id_obra = $_REQUEST['id_obra'];
-            $titulo = $_REQUEST['titulo'];
-            $cuerpo =  $_REQUEST['cuerpo'];
-            $categoria = $_REQUEST['categoria'];
-            $fecha = $_REQUEST['fecha'];
-
-            //print($id);
-            //print($id_obra);
-            $obj_actualizar = new obra();
-            $obj_actualizar->actualizar_obras($id_obra, $id, $titulo, $cuerpo, $categoria, $fecha);
-
-            $obj_obra = new obra();
-            $obra_seleccionada = $obj_obra->seleccionar_obra($id_obra);
-            //print("<br><br>");
-            // print_r($obra_seleccionada);
-        }
-
-        if (isset($_REQUEST['eliminar'])) {
-            print_r($_REQUEST);
-            $id_obra = $_REQUEST['id_obra'];
-            $obj_eliminar = new obra();
-            $obj_eliminar->eliminar_obras($id_obra);
-            header('Location: maintenance.php');
-        }
-
-        $id_obra = $_REQUEST['id_obra'];
-        $null = '&nbsp';
-        $prosa = '&nbsp';
-        $haiku = '&nbsp';
-        $himno = '&nbsp';
-        $epigrama = '&nbsp';
-
-        $obj_obra = new obra();
-        $obra_seleccionada = $obj_obra->seleccionar_obra($id_obra);
-        foreach ($obra_seleccionada as $obra_dato) {
-            $titulo = $obra_dato['titulo'];
-            $cuerpo =  $obra_dato['cuerpo'];
-            $categoria =  $obra_dato['categoria'];
-            $fecha =  $obra_dato['fecha'];
-        }
-
-        switch ($categoria) {
-
-            case "Prosa Poetica":
-                $prosa = 'selected';
-                break;
-            case "Haiku":
-                $haiku = 'selected';
-                break;
-            case "Himno":
-                $himno = 'selected';
-                break;
-            case "Epigrama":
-                $epigrama = 'selected';
-                break;
-            default:
-                $null = 'selected';
-        }
-
-        //print_r($obra_seleccionada);
-        //print_r($_SESSION["usuario_id"]);
-        //print_r($_REQUEST);
-
         ?>
-            <!-- Begin page content -->
-            <main role="main" class="container">
-                <div class="container my-5">
 
-                    <!--Section: Content-->
-                    <section class="">
+        <!-- Begin page content -->
+        <main role="main" class="container">
+            <div class="container my-5">
 
-                        <!-- Section heading -->
-                        <h3 class="text-center font-weight-bold mb-5">Actualizar Obra Literaria</h3>
-                        <div class="row">
-                            <!--Grid column-->
-                            <div class="col align-self-start">
-                                <form class="border border-light p-5" name='obraForm' action='maintenanceForm.php' method='POST'>
 
-                                    <p class="h4 mb-4 text-center">Llene los siguientes campos:</p>
-                                    <?php
+                <!--Section: Content-->
+                <section class="">
 
-                                        print("<input type='hidden' name='id_obra' value='$id_obra'>");
+                    <!-- Section heading -->
+                    <h3 class="text-center font-weight-bold mb-5">Descubre</h3>
 
-                                        print("<input type='text' name='titulo' id='defaultContactFormName' class='form-control mb-4' value='$titulo'
-                                         placeholder='Título'></p>\n");
+                    <div class="row">
 
-                                        print("<SELECT name='categoria' id='defaultSelect' class='browser-default custom-select mb-4'>
-                                         <OPTION value='' $null>" .
-                                            "
-                                         <OPTION value='Prosa Poetica' $prosa>Prosa Poetíca
-                                         <OPTION value='Haiku' $haiku>Haiku
-                                         <OPTION value='Himno' $himno>Himno
-                                         <OPTION value='Epigrama' $epigrama>Epigrama
-                                     </SELECT>");
+                        <!--Grid column-->
+                        <div class="col-lg-3 col-md-6 mb-4 d-flex align-items-stretch">
+                            <!--Card-->
+                            <div class="card">
 
-                                        print("<input type='date' name='fecha' value='$fecha'>");
-                                        ?>
-                            </div>
-                            <!--Grid column-->
+                                <!--Card image-->
+                                <div class="view overlay">
+                                    <img src="./img/backgrounds/prosa_poetica.svg" class="card-img-top" alt="">
+                                    <a>
+                                        <div class="nav-link"></div>
+                                    </a>
+                                </div>
+                                <!--/.Card image-->
 
-                            <!--Grid column-->
-                            <div class="col align-self-center text-center">
-                                <?php
-                                    print(" <textarea name='cuerpo' class='form-control rounded-0' id='exampleFormControlTextarea2' rows='13' cols='30'
-                            placeholder='Cuerpo' style='text-align: center;'>$cuerpo</textarea>");
-                                    ?>
-                                <button class="btn btn-info btn-default my-4 btn-md ml-0" name='actualizar' type="submit">Actualizar</button>
-                                <button class="btn btn-danger btn-default my-4 btn-md ml-0" name='eliminar' type="submit">Eliminar</button>
-                                <!--/.Card-->
+                                <!--Card content-->
+                                <div class="card-body">
+                                    <!--Title-->
+                                    <a href="poetic.php">
+                                        <h4 class="card-title" style="text-align:center; color: #2D7D9A !important;">
+                                            <strong>Prosa Poetíca</strong></h4>
+                                    </a>
+                                    <!--Text-->
+
+                                    <p class="text-right mb-0 font-small font-weight-bold"><a><i class="fas fa-angle-right"></i></a></p>
+                                </div>
+                                <!--/.Card content-->
 
                             </div>
-                            <!--Grid column-->
+                            <!--/.Card-->
 
-                            </form>
                         </div>
+                        <!--Grid column-->
 
+                        <!--Grid column-->
+                        <div class="col-lg-3 col-md-6 mb-4 d-flex align-items-stretch">
+                            <!--Card-->
+                            <div class="card">
 
-                    </section>
-                    <!--Section: Content-->
+                                <!--Card image-->
+                                <div class="view overlay">
+                                    <img src="./img/backgrounds/haiku.svg" class="card-img-top" alt="">
+                                    <a>
+                                        <div class="nav-link"></div>
+                                    </a>
+                                </div>
+                                <!--/.Card image-->
 
-                </div>
-            </main>
-        <?php
-        } else {
-            ?>
-            <section class="dark-grey-text text-center">
+                                <!--Card content-->
+                                <div class="card-body">
+                                    <!--Title-->
+                                    <a href="haiku.php">
+                                        <h4 class="card-title" style="text-align:center; color: #2D7D9A !important;">
+                                            <strong>Haiku</strong></h4>
+                                    </a>
+                                    <!--Text-->
 
-                <h3 class="font-weight-bold pt-5 pb-2">¡Oh vaya! Parece que no hay una sesión activa.</h3>
+                                    <p class="text-right mb-0 font-small font-weight-bold"><a><i class="fas fa-angle-right"></i></a></p>
+                                </div>
+                                <!--/.Card content-->
 
-                <div class="row mx-3">
-                    <div class="col-md-4 px-4 mb-4">
-                    </div>
-                    <div class="col-md-4 px-4 mb-4">
+                            </div>
+                            <!--/.Card-->
 
-                        <div class="view">
-                            <img src="./img/backgrounds/confusedbird.png" class="img-fluid" alt="smaple image">
                         </div>
-                        <a href="login.php">
-                            <button class="btn btn-welcome">Conectar</button>
-                        </a>
-                    </div>
-                    <div class="col-md-4 px-4 mb-4">
-                    </div>
-                </div>
-            </section>
-            <!--Section: Content-->
-        <?php
-        }
+                        <!--Grid column-->
 
+                        <!--Grid column-->
+                        <div class="col-lg-3 col-md-6 mb-4 d-flex align-items-stretch">
+                            <!--Card-->
+                            <div class="card">
+
+                                <!--Card image-->
+                                <div class="view overlay">
+                                    <img src="./img/backgrounds/himno.svg" class="card-img-top" alt="">
+                                    <a>
+                                        <div class="nav-link"></div>
+                                    </a>
+                                </div>
+                                <!--/.Card image-->
+
+                                <!--Card content-->
+                                <div class="card-body">
+                                    <!--Title-->
+                                    <a href="anthem.php">
+                                        <h4 class="card-title" style="text-align:center; color: #2D7D9A !important;">
+                                            <strong>Himno</strong></h4>
+                                    </a>
+                                    <!--Text-->
+
+                                    <p class="text-right mb-0 font-small font-weight-bold"><a><i class="fas fa-angle-right"></i></a></p>
+                                </div>
+                                <!--/.Card content-->
+
+                            </div>
+                            <!--/.Card-->
+
+                        </div>
+                        <!--Grid column-->
+
+                         <!--Grid column-->
+                         <div class="col-lg-3 col-md-6 mb-4 d-flex align-items-stretch">
+                            <!--Card-->
+                            <div class="card">
+
+                                <!--Card image-->
+                                <div class="view overlay">
+                                    <img src="./img/backgrounds/epigrama.svg" class="card-img-top" alt="">
+                                    <a>
+                                        <div class="nav-link"></div>
+                                    </a>
+                                </div>
+                                <!--/.Card image-->
+
+                                <!--Card content-->
+                                <div class="card-body">
+                                    <!--Title-->
+                                    <a href="epigram.php">
+                                        <h4 class="card-title" style="text-align:center; color: #2D7D9A !important;">
+                                            <strong>Epigrama</strong></h4>
+                                    </a>
+                                    <!--Text-->
+
+                                    <p class="text-right mb-0 font-small font-weight-bold"><a><i class="fas fa-angle-right"></i></a></p>
+                                </div>
+                                <!--/.Card content-->
+
+                            </div>
+                            <!--/.Card-->
+
+                        </div>
+                        <!--Grid column-->
+                        
+                    </div>
+
+
+                </section>
+                <!--Section: Content-->
+
+
+            </div>
+        </main>
+
+    <?php
+    } else {
         ?>
-        <!-- Bootstrap core JavaScript
+        <section class="dark-grey-text text-center">
+
+            <h3 class="font-weight-bold pt-5 pb-2">¡Oh vaya! Parece que no hay una sesión activa.</h3>
+
+            <div class="row mx-3">
+                <div class="col-md-4 px-4 mb-4">
+                </div>
+                <div class="col-md-4 px-4 mb-4">
+
+                    <div class="view">
+                        <img src="./img/backgrounds/confusedbird.png" class="img-fluid" alt="smaple image">
+                    </div>
+                    <a href="login.php">
+                        <button class="btn btn-welcome">Conectar</button>
+                    </a>
+                </div>
+                <div class="col-md-4 px-4 mb-4">
+                </div>
+            </div>
+        </section>
+        <!--Section: Content-->
+    <?php
+    }
+    ?>
+
+    <!-- Bootstrap core JavaScript
     ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
-        <!-- Bootstrap tooltips -->
-        <script type="text/javascript" src="./js/popper.min.js"></script>
-        <!-- Bootstrap core JavaScript -->
-        <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="./js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
 
-</BODY>
+</body>
 
-</HTML>
+</html>

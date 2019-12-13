@@ -55,7 +55,7 @@ session_start();
                     <ul class="navbar-nav">
 
                         <li class="nav-item">
-                            <a class="nav-link font-weight-bold" href="home.php">Home</a>
+                            <a class="nav-link font-weight-bold" href="home.php">Inicio</a>
                         </li>
 
                         <li class="nav-item">
