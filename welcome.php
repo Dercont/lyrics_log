@@ -37,7 +37,9 @@ session_start();
 </head>
 
 <body>
+  
     <?php
+    //  print_r($_COOKIE["usuario"]);
     if (isset($_SESSION["usuario_valido"])) {
         ?>
         <div class="flex-center welcome">
@@ -53,13 +55,16 @@ session_start();
                         <h5 class="sh3bold">Gestor de Obras Literarias</h5>
                         <br>
                         <p class="sh3bold">¡Bienvenido!</p>
-                        <p class="p2b">$user</p>
                         
+                        <?php
+                        if(isset($_COOKIE["usuario"])){
+                        print('<p class="p2b">'.$_COOKIE["usuario"].'</p>');
+                        }
+                        ?>
 
                         <a href="home.php">
                             <button class="btn btn-welcome">Iniciar</button>
                         </a>
-
                 </div>
             </div>
         </div>

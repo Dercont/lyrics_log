@@ -1,13 +1,17 @@
 <?php
 session_start();
-
+//print_r($_REQUEST);
+print_r($_COOKIE["usuario"]);
 //Si el campo de entrada usuario y clave tienen un valor entonces 
 if (isset($_REQUEST['usuario']) && isset($_REQUEST['clave'])) {
+
+    //Cookie
+    $expire=time()+60*5;
+    setcookie("usuario",$_REQUEST['usuario'],$expire);
 
     //Guardar el valor tomado en variables
     $usuario = $_REQUEST['usuario'];
     $clave = $_REQUEST['clave'];
-
 
     //Preguntar, probablemente tiene que ver con un proceso de encriptación lo que se 
     //se desea encriptar, desde donde debe inciar y la longitud
@@ -88,7 +92,7 @@ if (isset($_REQUEST['usuario']) && isset($_REQUEST['clave'])) {
         <?php
         // Sesión Iniciada
         if (isset($_SESSION["usuario_valido"])) {
-            header('Location: welcome.php');
+           header('Location: welcome.php');
         }
         // Intento de Entrada Fallido
         else if (isset($usuario)) {
