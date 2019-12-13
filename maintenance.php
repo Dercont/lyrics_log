@@ -15,6 +15,8 @@ session_start();
     <link rel="stylesheet" href="./css/fluent.css">
     <!-- Micon icons-->
     <link rel="stylesheet" href="./css/micon.min.css">
+    <!-- FontAwesome icons-->
+    <link rel="stylesheet" href="./css/all.min.css">
     <!--Custom style -->
     <style>
         /* Delete it if you don't want to have black/white colors and forced font-weight */
@@ -33,7 +35,7 @@ session_start();
             font-weight: 400;
         }
     </style>
-    <!--<link rel="stylesheet" type="text/css" href="libreria/jquery.dataTables.min.css">-->
+    <link rel="stylesheet" type="text/css" href="libreria/jquery.dataTables.min.css">
     <Script type="text/javascript" language="javascript" src="libreria/jquery-3.1.1.js"></script>
     <Script type="text/javascript" language="javascript" src="libreria/jquery.dataTables.min.js"></script>
 </head>
@@ -90,12 +92,13 @@ session_start();
         <script type="text/javascript">
             $(document).ready(function() {
                 $('#grid').DataTable({
+                    "pageLength":5,
                     "lengthMenu:": [5, 10, 20, 50],
                     "order": [
                         [0, "asc"]
                     ],
                     "language": {
-                        "lengthMenu": "Mostrar _MENU_ registrados por página",
+                        "lengthMenu": "Mostrar _MENU_ obras por página.",
                         "zeroRecords": "No existen resultados en su búsqueda",
                         "info": "Mostrando página _PAGE_ de _PAGES_",
                         "infoEmpty": "No hay registros disponibles",
@@ -142,7 +145,7 @@ session_start();
             print("             <th>Cuerpo</th>\n");
             print("             <th>Categoría</th>\n");
             print("             <th>Fecha</th>\n");
-            print("             <th>Ver</th>\n");
+            print("             <th>Editar</th>\n");
             print("         </tr>\n");
             print("     </thead>");
             print("     <tbody>");
@@ -153,8 +156,8 @@ session_start();
                 print("         <td text-center>" . $resultado['cuerpo'] . "</td>\n");
                 print("         <td text-center>" . $resultado['categoria'] . "</td>\n");
                 print("         <td text-center>" . date("j/n/y", strtotime($resultado['fecha'])) . "</td>\n");
-                print("         <td><A HREF='maintenanceForm.php" . "?id_obra=" . $resultado['id_obra'] . "'>" .
-                    "               <IMG BORDER='0' SRC='img/iconotexto.gif'></A></td>\n");
+                print("         <td style='text-align: center;'><A HREF='maintenanceForm.php" . "?id_obra=" . $resultado['id_obra'] . "'>" .
+                    "     <i class='fas fa-edit' style='color: #2D7D9A;'></i>          </A></td>\n");
                 print("     </tr>\n");
             }
             print("     </tbody>");
@@ -171,6 +174,11 @@ session_start();
         print("<P Align='center'>[ <a href='login.php'> Conectar </a> ]</p>\n");
     }
     ?>
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </body>
+<footer>
+    <br>
+    <br>
+</footer>
 
 </html>
