@@ -112,7 +112,7 @@ session_start();
                                     <!--Title-->
                                     <a href="poetic.php">
                                         <h4 class="card-title" style="text-align:center; color: #2D7D9A !important;">
-                                            <strong>Prosa Poetíca</strong></h4>
+                                            <strong>Prosa Poética</strong></h4>
                                     </a>
                                     <!--Text-->
 

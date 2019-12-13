@@ -2,13 +2,11 @@
 session_start();
 ?>
 
-<HTML LANG="es">
-
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Crear</title>
+    <title>Haiku</title>
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <!-- Fluent Design Bootstrap -->
@@ -33,11 +31,11 @@ session_start();
             font-weight: 400;
         }
     </style>
-    <link rel="shortcut icon" type="image/png" href="./img/backgrounds/favicon.png" >
+    <link rel="shortcut icon" type="image/png" href="./img/backgrounds/favicon.png">
 
 </head>
 
-<BODY>
+<body>
     <header>
         <!--Navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2D7D9A;">
@@ -61,9 +59,11 @@ session_start();
                         <li class="nav-item">
                             <a class="nav-link font-weight-bold" href="maintenance.php">Bitácora</a>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link font-weight-bold" href="discover.php">Descubre</a>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link font-weight-bold" href="logout.php">Salir</a>
                         </li>
@@ -81,81 +81,72 @@ session_start();
     </header>
 
     <?php
-    require_once("class/obras.php");
-
-    //print_r($_SESSION["usuario_id"]);
-    //print_r($_POST);
-
-    //llevar a MaintenanceForm
-    if (isset($_POST['registrar'])) {
-        //print_r($_POST);
-        $id = $_SESSION["usuario_id"];
-        $titulo = $_POST['titulo'];
-        $cuerpo = $_POST['cuerpo'];
-        $categoria = $_POST['categoria'];
-        $fecha = $_POST['fecha'];
-
-        $obj_obra = new obra();
-        $obj_obra->insertar_obras($id, $titulo, $cuerpo, $categoria, $fecha);
-        header('Location: maintenance.php');
-    } elseif (isset($_SESSION["usuario_valido"])) {
+    if (isset($_SESSION["usuario_valido"])) {
         ?>
 
         <!-- Begin page content -->
         <main role="main" class="container">
-            <div class="container my-5">
+            <div class="container my-5 py-1 z-depth-1">
+
 
                 <!--Section: Content-->
-                <section class="">
+                <section class="px-md-5 mx-md-5 text-center text-lg-left dark-grey-text">
 
                     <!-- Section heading -->
-                    <h3 class="text-center font-weight-bold mb-5">Nueva Obra Literaria</h3>
+                    <h3 class="text-center font-weight-bold mb-5">Haiku</h3>
+
                     <div class="row">
                         <!--Grid column-->
-                        <div class="col align-self-start">
-                            <form class="border border-light p-5" name='obra' action='create.php' method='POST'>
+                        <div class="col-md-6 mb-4 mb-md-0">
 
-                                <p class="h4 mb-4 text-center">Llene los siguientes campos:</p>
+                            <h5 class="font-weight-bold">La sinfonía constante de la naturaleza hecha versos</h5>
 
+                            <p class="text-break text-justify">Es una composición poética japonesa tradicional que tiene sus orígenes en el antiguo Japón Feudal.
+                            </p>
+                            <p class="text-break text-justify">Los haikus son poemas extremadamente breves y están formados (en su versión japonesa) por un total de 17 sílabas distribuidas en tres versos de 5, 7 y 5 sílabas respectivamente. Suelen ser composiciones muy visuales y se aprecian mucho mejor si se dedica algo de tiempo a imaginar las escenas que sugieren.
+                            </p>
 
-                                <input type="text" name='titulo' id="defaultContactFormName" class="form-control mb-4" placeholder="Título">
-
-                                <label for="defaultSelect">Categoría</label>
-                                <select name="categoria" id="defaultSelect" class="browser-default custom-select mb-4">
-                                    <OPTION value="" selected>
-                                    <OPTION value="Prosa Poetica">Prosa Poética
-                                    <OPTION value="Haiku">Haiku
-                                    <OPTION value="Himno">Himno
-                                    <OPTION value="Epigrama">Epigrama
-                                </select>
-
-                                <input type="date" name="fecha">
-                        </div>
-                        <!--Grid column-->
-
-                        <!--Grid column-->
-                        <div class="col align-self-center text-center">
-                            <textarea name="cuerpo" class="form-control rounded-0" id="exampleFormControlTextarea2" rows="13" cols="30" placeholder="Cuerpo" style="text-align: center;"></textarea>
-                            <button class="btn btn-info btn-default my-4 btn-md ml-0" name='registrar' type="submit">Guardar</button>
-                            <!--/.Card-->
+                            <blockquote class="blockquote" style=" font-size: 1rem;">
+                                <p class="sh6 font-italic">Flores de cerezo en el cielo oscuro,
+                                entre ellas,
+                                la melancolía florece.
+                                </p>
+                                <footer class="blockquote-footer text-justify font-weight-bold">Matsuo Bashō <cite title="Source Title">(Poeta japonés)</cite></footer>
+                            </blockquote>
 
                         </div>
                         <!--Grid column-->
 
+                        <!--Grid column-->
+                        <div class="col-md-6 mb-4 mb-md-0">
 
+                            <!--Image-->
+                            <div class="view overlay z-depth-1-half">
+                                <img src="https://mdbootstrap.com/img/Photos/Others/img%20(28).jpg" class="img-fluid" alt="">
+                                <a href="#">
+                                    <div class="mask rgba-white-light"></div>
+                                </a>
+                                <div class="align-self-center text-center">
+                                    <a class="btn btn-info btn-default my-4 btn-md ml-0" href="discover.php" role="button">Volver<i class="fa fa-magic ml-2"></i></a>
+                                </div>
+                            </div>
 
-                        </form>
+                        </div>
+                        <!--Grid column-->
+
                     </div>
-
 
                 </section>
                 <!--Section: Content-->
 
+
             </div>
         </main>
+
     <?php
     } else {
         ?>
+        <!--Section: Content-->
         <section class="dark-grey-text text-center">
 
             <h3 class="font-weight-bold pt-5 pb-2">¡Oh vaya! Parece que no hay una sesión activa.</h3>
@@ -179,7 +170,6 @@ session_start();
         <!--Section: Content-->
     <?php
     }
-
     ?>
 
     <!-- Bootstrap core JavaScript
@@ -191,6 +181,6 @@ session_start();
     <!-- Bootstrap core JavaScript -->
     <script type="text/javascript" src="./js/bootstrap.min.js"></script>
 
-</BODY>
+</body>
 
-</HTML>
+</html>

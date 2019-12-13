@@ -6,7 +6,7 @@ session_start();
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Prosa Poetíca</title>
+    <title>Prosa Poética</title>
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <!-- Fluent Design Bootstrap -->
@@ -31,7 +31,7 @@ session_start();
             font-weight: 400;
         }
     </style>
-    <link rel="shortcut icon" type="image/png" href="./img/backgrounds/favicon.png" >
+    <link rel="shortcut icon" type="image/png" href="./img/backgrounds/favicon.png">
 
 </head>
 
@@ -52,8 +52,8 @@ session_start();
 
                     <!-- Links -->
                     <ul class="navbar-nav">
-                      
-                    <li class="nav-item">
+
+                        <li class="nav-item">
                             <a class="nav-link font-weight-bold" href="home.php">Inicio</a>
                         </li>
                         <li class="nav-item">
@@ -63,7 +63,7 @@ session_start();
                         <li class="nav-item">
                             <a class="nav-link font-weight-bold" href="discover.php">Descubre</a>
                         </li>
-                
+
                         <li class="nav-item">
                             <a class="nav-link font-weight-bold" href="logout.php">Salir</a>
                         </li>
@@ -86,151 +86,51 @@ session_start();
 
         <!-- Begin page content -->
         <main role="main" class="container">
-            <div class="container my-5">
+            <div class="container my-5 py-1 z-depth-1">
 
 
                 <!--Section: Content-->
-                <section class="">
+                <section class="px-md-5 mx-md-5 text-center text-lg-left dark-grey-text">
 
                     <!-- Section heading -->
-                    <h3 class="text-center font-weight-bold mb-5">Descubre</h3>
+                    <h3 class="text-center font-weight-bold mb-5">Prosa Poética</h3>
 
                     <div class="row">
-
                         <!--Grid column-->
-                        <div class="col-lg-3 col-md-6 mb-4 d-flex align-items-stretch">
-                            <!--Card-->
-                            <div class="card">
+                        <div class="col-md-6 mb-4 mb-md-0">
 
-                                <!--Card image-->
-                                <div class="view overlay">
-                                    <img src="./img/backgrounds/prosa_poetica.svg" class="card-img-top" alt="">
-                                    <a>
-                                        <div class="nav-link"></div>
-                                    </a>
-                                </div>
-                                <!--/.Card image-->
+                            <h5 class="font-weight-bold">Sentimientos hechos palabras</h5>
 
-                                <!--Card content-->
-                                <div class="card-body">
-                                    <!--Title-->
-                                    <a href="poetic.php">
-                                        <h4 class="card-title" style="text-align:center; color: #2D7D9A !important;">
-                                            <strong>Prosa Poetíca</strong></h4>
-                                    </a>
-                                    <!--Text-->
+                            <p class="text-break text-justify">La prosa es la forma del lenguaje oral o escrito que no está sometida a las leyes de la versificación (ritmo, métrica, medida).
+                                De ninguna manera se la puede confundir con un cuento o un relato, ya que lo más importante de ella no radica en narrar hechos, sino en transmitir sentimientos.
+                            </p>
 
-                                    <p class="text-right mb-0 font-small font-weight-bold"><a><i class="fas fa-angle-right"></i></a></p>
-                                </div>
-                                <!--/.Card content-->
-
-                            </div>
-                            <!--/.Card-->
-
+                            <blockquote class="blockquote" style=" font-size: 1rem;">
+                            <p class="sh6 font-italic">Platero es pequeño, peludo, suave; tan blando por fuera, que se diría todo de algodón, que no lleva huesos. Sólo los espejos de azabache de sus ojos son duros cual dos escarabajos de cristal negro.</p>
+                            <footer class="blockquote-footer text-justify font-weight-bold">Platero y yo <cite title="Source Title">(Fragmento)</cite></footer>
+                            </blockquote>
+                          
                         </div>
                         <!--Grid column-->
 
                         <!--Grid column-->
-                        <div class="col-lg-3 col-md-6 mb-4 d-flex align-items-stretch">
-                            <!--Card-->
-                            <div class="card">
+                        <div class="col-md-6 mb-4 mb-md-0">
 
-                                <!--Card image-->
-                                <div class="view overlay">
-                                    <img src="./img/backgrounds/haiku.svg" class="card-img-top" alt="">
-                                    <a>
-                                        <div class="nav-link"></div>
-                                    </a>
+                            <!--Image-->
+                            <div class="view overlay z-depth-1-half">
+                                <img src="https://mdbootstrap.com/img/Photos/Others/img%20(28).jpg" class="img-fluid" alt="">
+                                <a href="#">
+                                    <div class="mask rgba-white-light"></div>
+                                </a>
+                                <div class="align-self-center text-center">
+                                <a class="btn btn-info btn-default my-4 btn-md ml-0" href="discover.php" role="button">Volver<i class="fa fa-magic ml-2"></i></a>
                                 </div>
-                                <!--/.Card image-->
-
-                                <!--Card content-->
-                                <div class="card-body">
-                                    <!--Title-->
-                                    <a href="haiku.php">
-                                        <h4 class="card-title" style="text-align:center; color: #2D7D9A !important;">
-                                            <strong>Haiku</strong></h4>
-                                    </a>
-                                    <!--Text-->
-
-                                    <p class="text-right mb-0 font-small font-weight-bold"><a><i class="fas fa-angle-right"></i></a></p>
-                                </div>
-                                <!--/.Card content-->
-
                             </div>
-                            <!--/.Card-->
 
                         </div>
                         <!--Grid column-->
 
-                        <!--Grid column-->
-                        <div class="col-lg-3 col-md-6 mb-4 d-flex align-items-stretch">
-                            <!--Card-->
-                            <div class="card">
-
-                                <!--Card image-->
-                                <div class="view overlay">
-                                    <img src="./img/backgrounds/himno.svg" class="card-img-top" alt="">
-                                    <a>
-                                        <div class="nav-link"></div>
-                                    </a>
-                                </div>
-                                <!--/.Card image-->
-
-                                <!--Card content-->
-                                <div class="card-body">
-                                    <!--Title-->
-                                    <a href="anthem.php">
-                                        <h4 class="card-title" style="text-align:center; color: #2D7D9A !important;">
-                                            <strong>Himno</strong></h4>
-                                    </a>
-                                    <!--Text-->
-
-                                    <p class="text-right mb-0 font-small font-weight-bold"><a><i class="fas fa-angle-right"></i></a></p>
-                                </div>
-                                <!--/.Card content-->
-
-                            </div>
-                            <!--/.Card-->
-
-                        </div>
-                        <!--Grid column-->
-
-                         <!--Grid column-->
-                         <div class="col-lg-3 col-md-6 mb-4 d-flex align-items-stretch">
-                            <!--Card-->
-                            <div class="card">
-
-                                <!--Card image-->
-                                <div class="view overlay">
-                                    <img src="./img/backgrounds/epigrama.svg" class="card-img-top" alt="">
-                                    <a>
-                                        <div class="nav-link"></div>
-                                    </a>
-                                </div>
-                                <!--/.Card image-->
-
-                                <!--Card content-->
-                                <div class="card-body">
-                                    <!--Title-->
-                                    <a href="epigram.php">
-                                        <h4 class="card-title" style="text-align:center; color: #2D7D9A !important;">
-                                            <strong>Epigrama</strong></h4>
-                                    </a>
-                                    <!--Text-->
-
-                                    <p class="text-right mb-0 font-small font-weight-bold"><a><i class="fas fa-angle-right"></i></a></p>
-                                </div>
-                                <!--/.Card content-->
-
-                            </div>
-                            <!--/.Card-->
-
-                        </div>
-                        <!--Grid column-->
-                        
                     </div>
-
 
                 </section>
                 <!--Section: Content-->
@@ -242,6 +142,7 @@ session_start();
     <?php
     } else {
         ?>
+        <!--Section: Content-->
         <section class="dark-grey-text text-center">
 
             <h3 class="font-weight-bold pt-5 pb-2">¡Oh vaya! Parece que no hay una sesión activa.</h3>

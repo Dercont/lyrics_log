@@ -179,7 +179,7 @@ session_start();
                                         print("<SELECT name='categoria' id='defaultSelect' class='browser-default custom-select mb-4'>
                                          <OPTION value='' $null>" .
                                             "
-                                         <OPTION value='Prosa Poetica' $prosa>Prosa Poetíca
+                                         <OPTION value='Prosa Poetica' $prosa>Prosa Poética
                                          <OPTION value='Haiku' $haiku>Haiku
                                          <OPTION value='Himno' $himno>Himno
                                          <OPTION value='Epigrama' $epigrama>Epigrama
