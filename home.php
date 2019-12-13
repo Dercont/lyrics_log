@@ -99,7 +99,7 @@ session_start();
 
                                 <!--Card image-->
                                 <div class="view overlay">
-                                    <img src="./img/backgrounds/crear.png" class="card-img-top" alt="">
+                                    <img src="./img/backgrounds/crear.svg" class="card-img-top" alt="">
                                     <a>
                                         <div class="nav-link"></div>
                                     </a>
@@ -132,7 +132,7 @@ session_start();
 
                                 <!--Card image-->
                                 <div class="view overlay">
-                                    <img src="./img/backgrounds/bitacora.png" class="card-img-top" alt="">
+                                    <img src="./img/backgrounds/bitacora.svg" class="card-img-top" alt="">
                                     <a>
                                         <div class="nav-link"></div>
                                     </a>
@@ -165,7 +165,7 @@ session_start();
 
                                 <!--Card image-->
                                 <div class="view overlay">
-                                    <img src="./img/backgrounds/descubre.png" class="card-img-top" alt="">
+                                    <img src="./img/backgrounds/descubre.svg" class="card-img-top" alt="">
                                     <a>
                                         <div class="nav-link"></div>
                                     </a>
@@ -190,6 +190,7 @@ session_start();
 
                         </div>
                         <!--Grid column-->
+                        
                     </div>
 
 

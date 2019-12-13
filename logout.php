@@ -84,7 +84,7 @@ session_start();
         ?>
         <section class="dark-grey-text text-center">
 
-            <h3 class="font-weight-bold pt-5 pb-2">¡Esperamos verte de regreso por aquí!</h3>
+            <h3 class="font-weight-bold pt-5 pb-2">¡Vuelve Pronto!</h3>
 
             <div class="row mx-3">
                 <div class="col-md-4 px-4 mb-4">
@@ -92,7 +92,7 @@ session_start();
                 <div class="col-md-4 px-4 mb-4">
 
                     <div class="view">
-                        <img src="./img/backgrounds/confusedbird.png" class="img-fluid" alt="smaple image">
+                        <img src="./img/backgrounds/byebird.svg" class="img-fluid" alt="smaple image">
                     </div>
                     <a href="login.php">
                         <button class="btn btn-welcome">Conectar</button>
