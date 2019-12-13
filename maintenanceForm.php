@@ -59,7 +59,9 @@ session_start();
                         <li class="nav-item">
                             <a class="nav-link font-weight-bold" href="home.php">Home</a>
                         </li>
-
+                        <li class="nav-item">
+                            <a class="nav-link font-weight-bold" href="maintenance.php">Bitácora</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link font-weight-bold" href="discover.php">Descubre</a>
                         </li>
@@ -212,9 +214,29 @@ session_start();
             </main>
         <?php
         } else {
-            print("<BR><BR>\n");
-            print("<P Align='center'>Acceso no autorizado</p>\n");
-            print("<P Align='center'>[ <a href='login.php'> Conectar </a> ]</p>\n");
+            ?>
+            <section class="dark-grey-text text-center">
+
+                <h3 class="font-weight-bold pt-5 pb-2">¡Oh vaya! Parece que no hay una sesión activa.</h3>
+
+                <div class="row mx-3">
+                    <div class="col-md-4 px-4 mb-4">
+                    </div>
+                    <div class="col-md-4 px-4 mb-4">
+
+                        <div class="view">
+                            <img src="./img/backgrounds/confusedbird.png" class="img-fluid" alt="smaple image">
+                        </div>
+                        <a href="login.php">
+                            <button class="btn btn-welcome">Conectar</button>
+                        </a>
+                    </div>
+                    <div class="col-md-4 px-4 mb-4">
+                    </div>
+                </div>
+            </section>
+            <!--Section: Content-->
+        <?php
         }
 
         ?>

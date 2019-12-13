@@ -1,5 +1,5 @@
 <?php
-    session_start ();
+session_start();
 ?>
 
 <HTML LANG="es">
@@ -45,9 +45,7 @@
             <div class=" container">
 
                 <!-- Collapse button -->
-                <button class="navbar-toggler float-right" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
+                <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -60,7 +58,9 @@
                         <li class="nav-item">
                             <a class="nav-link font-weight-bold" href="home.php">Home</a>
                         </li>
-
+                        <li class="nav-item">
+                            <a class="nav-link font-weight-bold" href="maintenance.php">Bitácora</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link font-weight-bold" href="discover.php">Descubre</a>
                         </li>
@@ -94,77 +94,94 @@
         $cuerpo = $_POST['cuerpo'];
         $categoria = $_POST['categoria'];
         $fecha = $_POST['fecha'];
-        
+
         $obj_obra = new obra();
-        $obj_obra->insertar_obras($id,$titulo,$cuerpo,$categoria,$fecha);
+        $obj_obra->insertar_obras($id, $titulo, $cuerpo, $categoria, $fecha);
         header('Location: maintenance.php');
-
-     }elseif(isset($_SESSION["usuario_valido"])){
+    } elseif (isset($_SESSION["usuario_valido"])) {
         ?>
-        
-       <!-- Begin page content -->
-    <main role="main" class="container">
-        <div class="container my-5">
 
-            <!--Section: Content-->
-            <section class="">
+        <!-- Begin page content -->
+        <main role="main" class="container">
+            <div class="container my-5">
 
-                <!-- Section heading -->
-                <h3 class="text-center font-weight-bold mb-5">Nueva Obra Literaria</h3>
-                <div class="row">
-                    <!--Grid column-->
-                    <div class="col align-self-start">
-                        <form class="border border-light p-5" name='obra' action='create.php' method='POST'>
+                <!--Section: Content-->
+                <section class="">
 
-                            <p class="h4 mb-4 text-center">Llene los siguientes campos:</p>
+                    <!-- Section heading -->
+                    <h3 class="text-center font-weight-bold mb-5">Nueva Obra Literaria</h3>
+                    <div class="row">
+                        <!--Grid column-->
+                        <div class="col align-self-start">
+                            <form class="border border-light p-5" name='obra' action='create.php' method='POST'>
+
+                                <p class="h4 mb-4 text-center">Llene los siguientes campos:</p>
 
 
-                            <input type="text" name='titulo' id="defaultContactFormName" class="form-control mb-4"
-                                placeholder="Título">
+                                <input type="text" name='titulo' id="defaultContactFormName" class="form-control mb-4" placeholder="Título">
 
-                            <label for="defaultSelect">Categoría</label>
-                            <select name="categoria" id="defaultSelect" class="browser-default custom-select mb-4">
-                                <OPTION value="" selected>
-                                <OPTION value="Prosa Poetica">Prosa Poetíca
-                                <OPTION value="Haiku">Haiku
-                                <OPTION value="Himno">Himno
-                                <OPTION value="Epigrama">Epigrama
-                            </select>
+                                <label for="defaultSelect">Categoría</label>
+                                <select name="categoria" id="defaultSelect" class="browser-default custom-select mb-4">
+                                    <OPTION value="" selected>
+                                    <OPTION value="Prosa Poetica">Prosa Poetíca
+                                    <OPTION value="Haiku">Haiku
+                                    <OPTION value="Himno">Himno
+                                    <OPTION value="Epigrama">Epigrama
+                                </select>
 
-                            <input type="date" name="fecha">
+                                <input type="date" name="fecha">
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col align-self-center text-center">
+                            <textarea name="cuerpo" class="form-control rounded-0" id="exampleFormControlTextarea2" rows="13" cols="30" placeholder="Cuerpo" style="text-align: center;"></textarea>
+                            <button class="btn btn-info btn-default my-4 btn-md ml-0" name='registrar' type="submit">Guardar</button>
+                            <!--/.Card-->
+
+                        </div>
+                        <!--Grid column-->
+
+
+
+                        </form>
                     </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col align-self-center text-center">
-                        <textarea name="cuerpo"  class="form-control rounded-0" id="exampleFormControlTextarea2" rows="13" cols="30"
-                        placeholder="Cuerpo" style="text-align: center;"></textarea>
-                        <button class="btn btn-info btn-default my-4 btn-md ml-0" name='registrar' type="submit">Guardar</button>
-                        <!--/.Card-->
-
-                    </div>
-                    <!--Grid column-->
 
 
+                </section>
+                <!--Section: Content-->
 
-                    </form>
-                </div>
-
-
-            </section>
-            <!--Section: Content-->
-
-        </div>
-    </main>
-        <?php  
+            </div>
+        </main>
+    <?php
     } else {
-        print("<BR><BR>\n");
-        print("<P Align='center'>Acceso no autorizado</p>\n");
-        print("<P Align='center'>[ <a href='login.php'> Conectar </a> ]</p>\n");
+        ?>
+        <section class="dark-grey-text text-center">
+
+            <h3 class="font-weight-bold pt-5 pb-2">¡Oh vaya! Parece que no hay una sesión activa.</h3>
+
+            <div class="row mx-3">
+                <div class="col-md-4 px-4 mb-4">
+                </div>
+                <div class="col-md-4 px-4 mb-4">
+
+                    <div class="view">
+                        <img src="./img/backgrounds/confusedbird.png" class="img-fluid" alt="smaple image">
+                    </div>
+                    <a href="login.php">
+                        <button class="btn btn-welcome">Conectar</button>
+                    </a>
+                </div>
+                <div class="col-md-4 px-4 mb-4">
+                </div>
+            </div>
+        </section>
+        <!--Section: Content-->
+    <?php
     }
-    
+
     ?>
-    
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

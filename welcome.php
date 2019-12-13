@@ -37,29 +37,57 @@ session_start();
 </head>
 
 <body>
-    <div class="flex-center welcome">
+    <?php
+    if (isset($_SESSION["usuario_valido"])) {
+        ?>
+        <div class="flex-center welcome">
 
-        <svg class="svg-wrapper" height="300" width="650" xmlns="http://www.w3.org/2000/svg">
-            <rect class="shape" height="300" width="650" />
-        </svg>
+            <svg class="svg-wrapper" height="300" width="650" xmlns="http://www.w3.org/2000/svg">
+                <rect class="shape" height="300" width="650" />
+            </svg>
 
-        <div style="height: 100vh">
-            <div class="flex-center flex-column ">
-                <h1 class="mb-4 text-right">
-                    <h1><span class="text-info font-weight-bold">Lyrics Log</h1>
-                    <p class="sh3bold">¡Bienvenido!</p>
-                    <p class="p2b">$user</p>
-                    <h5 class="sh3bold">Gestor de Obras Literarias</h5>
+            <div style="height: 100vh">
+                <div class="flex-center flex-column ">
+                    <h1 class="mb-4 text-right">
+                        <h1><span class="text-info font-weight-bold">Lyrics Log</h1>
+                        <p class="sh3bold">¡Bienvenido!</p>
+                        <p class="p2b">$user</p>
+                        <h5 class="sh3bold">Gestor de Obras Literarias</h5>
 
-                    <a href="home.php">
-                        <button class="btn btn-welcome">Iniciar</button>
-                    </a>
+                        <a href="home.php">
+                            <button class="btn btn-welcome">Iniciar</button>
+                        </a>
 
+                </div>
             </div>
         </div>
+    <?php
+    } else {
+        ?>
+        <section class="dark-grey-text text-center">
 
-    </div>
+            <h3 class="font-weight-bold pt-5 pb-2">¡Oh vaya! Parece que no hay una sesión activa.</h3>
 
+            <div class="row mx-3">
+                <div class="col-md-4 px-4 mb-4">
+                </div>
+                <div class="col-md-4 px-4 mb-4">
+
+                    <div class="view">
+                        <img src="./img/backgrounds/confusedbird.png" class="img-fluid" alt="smaple image">
+                    </div>
+                    <a href="login.php">
+                        <button class="btn btn-welcome">Conectar</button>
+                    </a>
+                </div>
+                <div class="col-md-4 px-4 mb-4">
+                </div>
+            </div>
+        </section>
+        <!--Section: Content-->
+    <?php
+    }
+    ?>
     <!-- Scripts -->
     <!-- JQuery -->
     <script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>

@@ -137,7 +137,7 @@ session_start();
         if ($nfilas > 0) { 
             print("<div class='container text-center'>");
             print("<div class='col-lg4 col-lg-offset-4'>");
-            print("<h1>Bitácora de Obras Literarias</h1>");
+            print("<h2 class='font-weight-bold mb-5'>Bitácora de Obras Literarias</h2>");
             print("<table id='grid' class='table table table-hover table-bordeless' cellspacing='0'>\n");
             print("     <thead style='text-align: center; color: white; background-color: #2D7D9A;>')");
             print("         <tr>\n");
@@ -169,10 +169,30 @@ session_start();
             print("No hay obras disponibles.");
         }
     }else{
-        print("<BR><BR>\n");
-        print("<P Align='center'>Acceso no autorizado</p>\n");
-        print("<P Align='center'>[ <a href='login.php'> Conectar </a> ]</p>\n");
-    }
+        ?>
+           <section class="dark-grey-text text-center">
+
+                <h3 class="font-weight-bold pt-5 pb-2">¡Oh vaya! Parece que no hay una sesión activa.</h3>
+
+                <div class="row mx-3">
+                    <div class="col-md-4 px-4 mb-4">
+                    </div>
+                    <div class="col-md-4 px-4 mb-4">
+
+                        <div class="view">
+                            <img src="./img/backgrounds/confusedbird.png" class="img-fluid" alt="smaple image">
+                        </div>
+                        <a href="login.php">
+                            <button class="btn btn-welcome">Conectar</button>
+                        </a>
+                    </div>
+                    <div class="col-md-4 px-4 mb-4">
+                    </div>
+                </div>
+                </section>
+                <!--Section: Content-->
+    <?php   
+            }
     ?>
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </body>

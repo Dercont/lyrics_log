@@ -92,9 +92,29 @@ if (isset($_REQUEST['usuario']) && isset($_REQUEST['clave'])) {
         }
         // Intento de Entrada Fallido
         else if (isset($usuario)) {
-            print("<BR><BR>\n");
-            print("<P Align='center'>Acceso no autorizado</p>\n");
-            print("<P Align='center'>[ <a href='login.php'> Conectar </a> ]</p>\n");
+           ?>
+            <section class="dark-grey-text text-center">
+
+            <h3 class="font-weight-bold pt-5 pb-2">¡Intenta Nuevamente! </h3>
+
+            <div class="row mx-3">
+                <div class="col-md-4 px-4 mb-4">
+                </div>
+                <div class="col-md-4 px-4 mb-4">
+
+                    <div class="view">
+                        <img src="./img/backgrounds/confusedbird.png" class="img-fluid" alt="smaple image">
+                    </div>
+                    <a href="login.php">
+                        <button class="btn btn-welcome">Conectar</button>
+                    </a>
+                </div>
+                <div class="col-md-4 px-4 mb-4">
+                </div>
+            </div>
+        </section>
+        <!--Section: Content-->
+        <?php
         }
         //Sesión no iniciada
         else {
