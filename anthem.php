@@ -124,7 +124,7 @@ session_start();
 
                             <!--Image-->
                             <div class="view overlay z-depth-1-half">
-                                <img src="https://mdbootstrap.com/img/Photos/Others/img%20(28).jpg" class="img-fluid" alt="">
+                                <img src="./img/backgrounds/bg_himno.svg" class="img-fluid" alt="">
                                 <a href="#">
                                     <div class="mask rgba-white-light"></div>
                                 </a>
