@@ -5,13 +5,82 @@ session_start();
 <html LANG="es">
 
 <head>
-    <title>Log</title>
-    <link rel="stylesheet" type="text/css" href="libreria/jquery.dataTables.min.css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Bitácora</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <!-- Fluent Design Bootstrap -->
+    <link rel="stylesheet" href="./css/fluent.css">
+    <!-- Micon icons-->
+    <link rel="stylesheet" href="./css/micon.min.css">
+    <!--Custom style -->
+    <style>
+        /* Delete it if you don't want to have black/white colors and forced font-weight */
+
+        body {
+            background-color: #fff;
+            color: #4A5459;
+        }
+
+        .font-weight-bold {
+            font-weight: 600 !important;
+        }
+
+        h5,
+        p {
+            font-weight: 400;
+        }
+    </style>
+    <!--<link rel="stylesheet" type="text/css" href="libreria/jquery.dataTables.min.css">-->
     <Script type="text/javascript" language="javascript" src="libreria/jquery-3.1.1.js"></script>
     <Script type="text/javascript" language="javascript" src="libreria/jquery.dataTables.min.js"></script>
 </head>
 
 <body>
+    <header>
+        <!--Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2D7D9A;">
+
+            <div class=" container">
+
+                <!-- Collapse button -->
+                <button class="navbar-toggler float-right" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Collapsible content -->
+                <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+
+                    <!-- Links -->
+                    <ul class="navbar-nav">
+
+                        <li class="nav-item">
+                            <a class="nav-link font-weight-bold" href="home.php">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link font-weight-bold" href="discover.php">Descubre</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link font-weight-bold" href="logout.php">Salir</a>
+                        </li>
+
+                    </ul>
+                    <!-- Links -->
+
+                </div>
+                <!-- CTA -->
+
+            </div>
+
+        </nav>
+        <!--/.Navbar -->
+    </header>
+
     <?php
     //print_r($_SESSION["usuario_id"]);
     echo ("<br>");
@@ -41,12 +110,11 @@ session_start();
                     }
                 });
 
-                $("*").css("font-family", "arial").css('font-size', '12px');
+               // $("*").css("font-family", "arial").css('font-size', '12px');
             });
         </script>
 
-        <h1>Bitácora de Obras Literarias</h1>
-        <p>[<a href='home.php'>Menú Principal</a>]</p>
+      
     <?php
         require_once("class/obras.php");
         //Variables de Trabajo
@@ -63,39 +131,37 @@ session_start();
         $nfilas = count($obras);
         //print_r($obras);
         //Si se retornan datos se imprime la tabla
-        if ($nfilas > 0) {
-
-            print("<table id='grid' class='display' cellspacing='0'>\n");
-            print("<thead>");
-            print("<tr>\n");
-            print("<th>Título</th>\n");
-            print("<th>Cuerpo</th>\n");
-            print("<th>Categoría</th>\n");
-            print("<th>Fecha</th>\n");
-            print("<th>Ver</th>\n");
-            print("</tr>\n");
-            print("</thead>");
-            print("<tbody>");
+        if ($nfilas > 0) { 
+            print("<div class='container text-center'>");
+            print("<div class='col-lg4 col-lg-offset-4'>");
+            print("<h1>Bitácora de Obras Literarias</h1>");
+            print("<table id='grid' class='table table table-hover table-bordeless' cellspacing='0'>\n");
+            print("     <thead style='text-align: center; color: white; background-color: #2D7D9A;>')");
+            print("         <tr>\n");
+            print("             <th>Título</th>\n");
+            print("             <th>Cuerpo</th>\n");
+            print("             <th>Categoría</th>\n");
+            print("             <th>Fecha</th>\n");
+            print("             <th>Ver</th>\n");
+            print("         </tr>\n");
+            print("     </thead>");
+            print("     <tbody>");
 
             foreach ($obras as $resultado) {
-                print("<tr>\n");
-                print("<td>" . $resultado['titulo'] . "</td>\n");
-                print("<td>" . $resultado['cuerpo'] . "</td>\n");
-                print("<td>" . $resultado['categoria'] . "</td>\n");
-                print("<td>" . date("j/n/y", strtotime($resultado['fecha'])) . "</td>\n");
-                print("<TD><A HREF='maintenanceForm.php" . "?id_obra=" . $resultado['id_obra'] . "'>" .
-                    "<IMG BORDER='0' SRC='img/iconotexto.gif'></A></TD>\n");
-                /*if ($resultado['imagen'] != "") {
-                print("<td><a target='_blank' href='img/" . $resultado['imagen'] .
-                    "'><img border='0' src='img/iconotexto.gif'></a></td>\n");
-            } else {
-                print("<td>&nbsp;</td>\n");
-            }*/
-                print("</tr>\n");
+                print("     <tr text-center>\n");
+                print("         <td text-center>" . $resultado['titulo'] . "</td>\n");
+                print("         <td text-center>" . $resultado['cuerpo'] . "</td>\n");
+                print("         <td text-center>" . $resultado['categoria'] . "</td>\n");
+                print("         <td text-center>" . date("j/n/y", strtotime($resultado['fecha'])) . "</td>\n");
+                print("         <td><A HREF='maintenanceForm.php" . "?id_obra=" . $resultado['id_obra'] . "'>" .
+                    "               <IMG BORDER='0' SRC='img/iconotexto.gif'></A></td>\n");
+                print("     </tr>\n");
             }
-
-            print("</tbody>");
+            print("     </tbody>");
             print("</table>\n");
+            print("</div>");
+        print("</div>");
+            
         } else {
             print("No hay obras disponibles.");
         }

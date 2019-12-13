@@ -8,7 +8,7 @@ session_start();
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Crear</title>
+    <title>Actualizar</title>
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <!-- Fluent Design Bootstrap -->
@@ -168,33 +168,33 @@ session_start();
 
                                     <p class="h4 mb-4 text-center">Llene los siguientes campos:</p>
                                     <?php
-                                    
-                                    print("<input type='hidden' name='id_obra' value='$id_obra'>");
 
-                                 print("<input type='text' name='titulo' id='defaultContactFormName' class='form-control mb-4' value='$titulo'
+                                        print("<input type='hidden' name='id_obra' value='$id_obra'>");
+
+                                        print("<input type='text' name='titulo' id='defaultContactFormName' class='form-control mb-4' value='$titulo'
                                          placeholder='Título'></p>\n");
-                                
-                                         print("<SELECT name='categoria' id='defaultSelect' class='browser-default custom-select mb-4'>
+
+                                        print("<SELECT name='categoria' id='defaultSelect' class='browser-default custom-select mb-4'>
                                          <OPTION value='' $null>" .
-                                             "
+                                            "
                                          <OPTION value='Prosa Poetica' $prosa>Prosa Poetíca
                                          <OPTION value='Haiku' $haiku>Haiku
                                          <OPTION value='Himno' $himno>Himno
                                          <OPTION value='Epigrama' $epigrama>Epigrama
                                      </SELECT>");
-                                    
-                                     print("<input type='date' name='fecha' value='$fecha'>");
-                                    ?>
+
+                                        print("<input type='date' name='fecha' value='$fecha'>");
+                                        ?>
                             </div>
                             <!--Grid column-->
 
                             <!--Grid column-->
                             <div class="col align-self-center text-center">
-                            <?php
-                            print(" <textarea name='cuerpo' class='form-control rounded-0' id='exampleFormControlTextarea2' rows='13' cols='30'
+                                <?php
+                                    print(" <textarea name='cuerpo' class='form-control rounded-0' id='exampleFormControlTextarea2' rows='13' cols='30'
                             placeholder='Cuerpo' style='text-align: center;'>$cuerpo</textarea>");
-                            ?>    
-                            <button class="btn btn-info btn-default my-4 btn-md ml-0" name='actualizar' type="submit">Actualizar</button>
+                                    ?>
+                                <button class="btn btn-info btn-default my-4 btn-md ml-0" name='actualizar' type="submit">Actualizar</button>
                                 <button class="btn btn-danger btn-default my-4 btn-md ml-0" name='eliminar' type="submit">Eliminar</button>
                                 <!--/.Card-->
 
@@ -218,6 +218,15 @@ session_start();
         }
 
         ?>
+        <!-- Bootstrap core JavaScript
+    ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
+        <!-- Bootstrap tooltips -->
+        <script type="text/javascript" src="./js/popper.min.js"></script>
+        <!-- Bootstrap core JavaScript -->
+        <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+
 </BODY>
 
 </HTML>
