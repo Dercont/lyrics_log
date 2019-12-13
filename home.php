@@ -59,7 +59,7 @@ session_start();
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link font-weight-bold" href="descubre.php">Descubre</a>
+                            <a class="nav-link font-weight-bold" href="discover.php">Descubre</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link font-weight-bold" href="logout.php">Salir</a>
@@ -179,7 +179,7 @@ session_start();
                             <!--Card content-->
                             <div class="card-body">
                                 <!--Title-->
-                                <a href="descubre.php">
+                                <a href="discover.php">
                                     <h4 class="card-title" style="text-align:center; color: #2D7D9A !important;">
                                         <strong>Descubre</strong></h4>
                                 </a>
